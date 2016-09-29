@@ -4,7 +4,7 @@
   - name: Download archive
     fetch:
       src: '{{ archive_path }}'
-      dest: '{{ archive_name }}'
+      dest: '{{ local_resource_path }}/{{ archive_name }}'
       flat: yes
     register: result
 
@@ -13,7 +13,7 @@
     synchronize:
       mode: pull
       src: '{{ archive_path }}'
-      dest: '{{ archive_name }}'
+      dest: '{{ local_resource_path }}/{{ archive_name }}'
     register: result
 
   always:
