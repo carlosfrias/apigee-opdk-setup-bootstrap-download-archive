@@ -9,6 +9,11 @@
     register: result
 
   rescue:
+  - name: Install rsync if its missing
+    yum:
+      name: rsync
+      state: present
+
   - name: First scp download attempt failed, trying with rsync
     synchronize:
       mode: pull
