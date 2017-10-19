@@ -3,8 +3,8 @@
 - block:
   - name: Download archive
     fetch:
-      src: '{{ apigeerepobasepath }}/{{ archive_name }}'
-      dest: '{{ local_apigee_path }}/{{ archive_name }}'
+      src: '{{ apigeerepobasepath }}/{{ apigee_archive_name }}'
+      dest: '{{ local_apigee_path }}/{{ apigee_archive_name }}'
       flat: yes
     register: result
 
@@ -17,8 +17,8 @@
   - name: First scp download attempt failed, trying with rsync
     synchronize:
       mode: pull
-      src: '{{ apigeerepobasepath }}/{{ archive_name }}'
-      dest: '{{ local_apigee_path }}/{{ archive_name }}'
+      src: '{{ apigeerepobasepath }}/{{ apigee_archive_name }}'
+      dest: '{{ local_apigee_path }}/{{ apigee_archive_name }}'
     register: result
 
   always:
