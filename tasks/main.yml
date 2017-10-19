@@ -1,28 +1,17 @@
 ---
 # tasks file for apigee-opdk-setup-local-repository
-- block:
-  - name: Download archive
-    fetch:
-      src: '{{ apigeerepobasepath }}/{{ apigee_archive_name }}'
-      dest: '{{ local_apigee_path }}/{{ apigee_archive_name }}'
-      flat: yes
-    register: result
+- name: Install rsync if its missing
+  yum:
+    name: rsync
+    state: present
 
-  rescue:
-  - name: Install rsync if its missing
-    yum:
-      name: rsync
-      state: present
+- name: First scp download attempt failed, trying with rsync
+  synchronize:
+    mode: pull
+    src: '{{ apigeerepobasepath }}/{{ apigee_archive_name }}'
+    dest: '{{ local_apigee_path }}/{{ apigee_archive_name }}'
+  register: result
 
-  - name: First scp download attempt failed, trying with rsync
-    synchronize:
-      mode: pull
-      src: '{{ apigeerepobasepath }}/{{ apigee_archive_name }}'
-      dest: '{{ local_apigee_path }}/{{ apigee_archive_name }}'
-    register: result
-
-  always:
-
-  - name: Download archive status report
-    debug:
-      var: result
+- name: Download archive status report
+  debug:
+    var: result
