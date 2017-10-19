@@ -10,6 +10,7 @@
   become: no
   synchronize:
     mode: pull
+    partial: yes
     src: '{{ apigeerepobasepath }}/{{ apigee_archive_name }}'
     dest: '{{ local_apigee_path }}/{{ apigee_archive_name }}'
   register: result
