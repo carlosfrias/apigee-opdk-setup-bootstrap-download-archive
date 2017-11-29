@@ -1,5 +1,12 @@
 ---
 # tasks file for apigee-opdk-setup-local-repository
+- name: Update cache with key and value
+  cache:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+  - { key: 'apigee_archive_name', value: '{{ apigee_archive_name }}' }
+
 - name: Install rsync if its missing
   become: yes
   yum:
