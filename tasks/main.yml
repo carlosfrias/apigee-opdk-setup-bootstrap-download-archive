@@ -6,7 +6,7 @@
     name: rsync
     state: present
 
-- name: First scp download attempt failed, trying with rsync
+- name: Download with rsync
   become: no
   synchronize:
     mode: pull
