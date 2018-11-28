@@ -1,3 +1,6 @@
 ---
 # defaults file for apigee-opdk-setup-local-repository
 apigee_archive_name: "apigee-{{ apigeereleasever | default(opdk_version) }}.tar.gz"
+apigee_home: '/opt/apigee'
+apigeerepobasepath: '{{ apigee_home }}/data/apigee-mirror'
+
