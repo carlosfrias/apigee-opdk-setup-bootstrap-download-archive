@@ -5,7 +5,7 @@
     key: "{{ item.key }}"
     value: "{{ item.value }}"
   with_items:
-  - { key: 'apigee_archive_name', value: '{{ apigee_archive_name }}' }
+  - { key: 'apigee_archive_file_name', value: '{{ apigee_archive_file_name }}' }
   - { key: 'apigeerepobasepath', value: '{{ apigeerepobasepath }}' }
 
 
@@ -20,8 +20,8 @@
   synchronize:
     mode: pull
     partial: yes
-    src: '{{ apigeerepobasepath }}/{{ apigee_archive_name }}'
-    dest: '{{ local_apigee_path }}/{{ apigee_archive_name }}'
+    src: '{{ apigeerepobasepath }}/{{ apigee_archive_file_name }}'
+    dest: '{{ local_apigee_path }}/{{ apigee_archive_file_name }}'
   register: result
 
 - name: Download archive status report
