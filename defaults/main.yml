@@ -3,5 +3,5 @@
 apigee_archive_name: "apigee-{{ apigeereleasever | default(opdk_version) }}"
 apigee_archive_file_name: "apigee-{{ apigee_archive_name }}.tar.gz"
 apigee_home: '/opt/apigee'
-apigeerepobasepath: '{{ apigee_home }}/data/apigee-mirror/{{ apigee_archive_file_name }}'
+apigeerepobasepath: '{{ apigee_home }}/data/apigee-mirror'
 
