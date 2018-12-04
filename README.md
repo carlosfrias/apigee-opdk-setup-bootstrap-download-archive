@@ -36,8 +36,6 @@ Dependencies with the Ansible Galaxy requirements file. Role dependencies are:
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - name: Download apigee mirror archive
       tags: ['download']
       hosts: "{{ target_hosts }}"
