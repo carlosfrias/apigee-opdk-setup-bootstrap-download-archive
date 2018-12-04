@@ -25,7 +25,7 @@ These are the variables that can be updated for this role:
 Dependencies
 ------------
 
-Dependencies are declared with the Ansible Galaxy requirements file. Role dependencies are:
+Dependencies with the Ansible Galaxy requirements file. Role dependencies are:
 
 * apigee-opdk-default-settings
 * apigee-opdk-modules
@@ -56,7 +56,6 @@ Including an example of how to use your role (for instance, with variables passe
       - { role: apigee-opdk-setup-apigee-user, tags: ['apigee-user', 'bootstrap'] }
       - { role: apigee-opdk-setup-apigee-user-ownership, tags: ['apigee-user', 'bootstrap'] }
       - { role: apigee-opdk-setup-bootstrap-download-archive, tags: ['download'] }
-
 
 License
 -------
