@@ -1,12 +1,10 @@
 ---
 # tasks file for apigee-opdk-setup-local-repository
 #- name: Update cache with key and value
-#  cache:
-#    key: "{{ item.key }}"
-#    value: "{{ item.value }}"
-#  with_items:
-#  - { key: 'apigee_archive_file_name', value: '{{ apigee_archive_file_name }}' }
-#  - { key: 'apigeerepobasepath', value: '{{ apigeerepobasepath }}' }
+#  set_fact:
+#    cacheable: yes
+#    apigee_archive_file_name', value: '{{ apigee_archive_file_name }}'
+#    apigeerepobasepath', value: '{{ apigeerepobasepath }}'
 
 - name: Install rsync if its missing
   become: yes
