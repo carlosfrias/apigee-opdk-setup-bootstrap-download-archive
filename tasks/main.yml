@@ -3,8 +3,8 @@
 #- name: Update cache with key and value
 #  set_fact:
 #    cacheable: yes
-#    apigee_archive_file_name', value: '{{ apigee_archive_file_name }}'
-#    apigeerepobasepath', value: '{{ apigeerepobasepath }}'
+#    apigee_archive_file_name: '{{ apigee_archive_file_name }}'
+#    apigeerepobasepath: '{{ apigeerepobasepath }}'
 
 - name: Install rsync if its missing
   become: yes
